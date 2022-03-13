@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "556962949107",
+    "project_id": "fighting-hunger-club-app",
+    "storage_bucket": "fighting-hunger-club-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556962949107:android:c3b055018e82f23b271486",
+        "android_client_info": {
+          "package_name": "com.fighthunger.fighthunger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556962949107-dl5g5trmbnad1em72dbf5983h5dlcmp1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-b-9RsHpIfYfQ1NXnAWUJEP1RjcW_Hns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556962949107-dl5g5trmbnad1em72dbf5983h5dlcmp1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556962949107:android:2f529e36dede067a271486",
+        "android_client_info": {
+          "package_name": "com.fightinghunger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556962949107-dl5g5trmbnad1em72dbf5983h5dlcmp1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-b-9RsHpIfYfQ1NXnAWUJEP1RjcW_Hns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556962949107-dl5g5trmbnad1em72dbf5983h5dlcmp1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
