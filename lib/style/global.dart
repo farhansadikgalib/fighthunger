@@ -14,9 +14,11 @@ Color darkFontColor =  Color(0xFF424242);
 Color lightGrey =  Color(0xFFdedede);
 Color darkGrey =  Color(0xFF696969);
 Color red =  Color(0xFFde2821);
-Color lightBlue = Color(0xFF97D5FF);
+Color lightBlue = Color(0xFF9bD4e4);
 Color softPink = Color(0xFFFF98D4);
 Color magenta = Color(0xFF9B005A);
+Color green = Color(0xFF0d653b);
+Color verySoftPink = Color(0xFFFFC5E7);
 
 
 

@@ -2,7 +2,7 @@ import 'package:fighthunger/models/signup.dart';
 import 'package:fighthunger/screens/sign_up.dart';
 import 'package:fighthunger/style/global.dart';
 
-import 'authentication_provider.dart';
+import '../database/authentication_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

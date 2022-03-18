@@ -1,15 +1,11 @@
-import 'dart:io';
+import 'package:fighthunger/database/authentication_provider.dart';
 import 'package:fighthunger/models/user.dart';
 import 'package:fighthunger/screens/homeContainer.dart';
+import 'package:fighthunger/screens/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:path_provider/path_provider.dart';
-import 'database/authentication_provider.dart';
-import 'screens/home_page.dart';
-import 'screens/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:intl/intl.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

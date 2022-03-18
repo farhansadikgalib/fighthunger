@@ -1,15 +1,22 @@
+import 'dart:io';
+
 import 'package:fighthunger/database/database.dart';
+import 'package:fighthunger/main.dart';
 import 'package:fighthunger/models/signup.dart';
+import 'package:fighthunger/models/user.dart';
+import 'package:fighthunger/screens/homeContainer.dart';
+import 'package:fighthunger/screens/home_page.dart';
 import 'package:fighthunger/style/global.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'authentication_provider.dart';
+import '../database/authentication_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
   _LogInPageState createState() => _LogInPageState();
+  
 }
 
 class _LogInPageState extends State<SignUpPage> {
@@ -26,15 +33,7 @@ class _LogInPageState extends State<SignUpPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            decoration: new BoxDecoration(
-              color: magenta,
-            ),
-            margin: EdgeInsets.symmetric(vertical:100),
-            padding: EdgeInsets.symmetric(vertical:20),
-            child: Text("SIGN-UP", style: pageBanner, textAlign: TextAlign.center,),
-          ),
+          _signUpBanner(),
           Container(
             width: MediaQuery.of(context).size.width*.8,
             child: Column(
@@ -92,21 +91,25 @@ class _LogInPageState extends State<SignUpPage> {
                     ),
                   ),
                 ),
-                
-                //Sign in / Sign up button
                 ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(magenta),
                     textStyle: MaterialStateProperty.all(basicMediumWhite),
                     padding: MaterialStateProperty.all(EdgeInsets.all(12))
                   ),
-                  onPressed: () {
+                  onPressed: () async {
                     context.read<AuthenticationProvider>().signUp(
                       email: SignUpForm.email,
                       password: SignUpForm.password,
                     );
-                    User? user = FirebaseAuth.instance.currentUser;
+                    User? user = await FirebaseAuth.instance.currentUser;
                     createUserProfile(user.uid, SignUpForm.email, usernameController.text.trim(), birthMonth.text.trim(), birthDay.text.trim(), schoolController.text.trim());
+                    FirebaseAuthUser.user = context.watch<User>();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePageContainer()),
+                    );
+
                   },
                   child: Text("Sign Up"),
                 ),
@@ -118,6 +121,17 @@ class _LogInPageState extends State<SignUpPage> {
       ),
     );
   
+  }
+  _signUpBanner(){
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      decoration: new BoxDecoration(
+        color: magenta,
+      ),
+      margin: EdgeInsets.symmetric(vertical:100),
+      padding: EdgeInsets.symmetric(vertical:20),
+      child: Text("SIGN-UP", style: pageBanner, textAlign: TextAlign.center,),
+    );
   }
 
 }
