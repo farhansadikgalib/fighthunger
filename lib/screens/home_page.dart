@@ -117,6 +117,10 @@ class HomePage extends StatelessWidget {
                       onPressed: (){
                         FirebaseAuth.instance.signOut();
                       }, 
+                      style: ElevatedButton.styleFrom(
+                        primary: magenta, // background
+                        // onPrimary: Colors.white, // foreground
+                      ),
                       child: Text("Sign Out")
                     ),
                     
