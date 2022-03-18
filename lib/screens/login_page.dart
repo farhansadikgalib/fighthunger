@@ -1,3 +1,4 @@
+import 'package:fighthunger/controllers/file_handler.dart';
 import 'package:fighthunger/models/signup.dart';
 import 'package:fighthunger/screens/sign_up.dart';
 import 'package:fighthunger/style/global.dart';
@@ -18,6 +19,7 @@ class _LogInPageState extends State<LogInPage> {
   
   //Handling signup and signin
   bool signUp = true;
+
 
   @override
   Widget build(BuildContext context) {

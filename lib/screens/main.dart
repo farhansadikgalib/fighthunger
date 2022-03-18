@@ -37,7 +37,10 @@ class MyApp extends StatelessWidget {
 class Authenticate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    context.read<AuthenticationProvider>().tryLocalSignIn();
+    
     FirebaseAuthUser.user = context.watch<User>();
+
 
     if (FirebaseAuthUser.user != null) {
       return HomePageContainer();

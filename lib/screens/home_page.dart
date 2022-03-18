@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fighthunger/database/database.dart';
-import 'package:fighthunger/functions/functions.dart';
+import 'package:fighthunger/controllers/school.dart';
 import 'package:fighthunger/models/user.dart';
 import 'package:fighthunger/style/global.dart';
 import 'package:firebase_auth/firebase_auth.dart';

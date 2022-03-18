@@ -10,6 +10,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
+import 'controllers/file_handler.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,6 +47,8 @@ class Authenticate extends StatelessWidget {
     if (FirebaseAuthUser.user != null) {
       return HomePageContainer();
     }
+
+
     return LogInPage();
   }
 }
