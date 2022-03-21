@@ -30,12 +30,15 @@ getSchools(school) async{
   List<Schools> _schoolsList = [];
 
   snapshot.docs.forEach((document) {
-    Schools schools = Schools.fromMap(document.data());
+    Schools schools = Schools.fromMap(document.data()??getSchools(school));
     _schoolsList.add(schools);
     print(document.data());
   });
   return _schoolsList;
 
+}
+
+data() {
 }
 
 addIdea(String idea){

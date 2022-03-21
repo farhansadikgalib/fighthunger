@@ -103,7 +103,7 @@ class _LogInPageState extends State<SignUpPage> {
                       password: SignUpForm.password,
                     );
                     User? user = await FirebaseAuth.instance.currentUser;
-                    createUserProfile(user.uid, SignUpForm.email, usernameController.text.trim(), birthMonth.text.trim(), birthDay.text.trim(), schoolController.text.trim());
+                    createUserProfile(user!.uid, SignUpForm.email, usernameController.text.trim(), birthMonth.text.trim(), birthDay.text.trim(), schoolController.text.trim());
                     FirebaseAuthUser.user = context.watch<User>();
                     Navigator.push(
                       context,

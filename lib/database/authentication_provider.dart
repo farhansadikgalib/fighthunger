@@ -7,7 +7,7 @@ class AuthenticationProvider {
   AuthenticationProvider(this.firebaseAuth);
   AuthStorage auth = AuthStorage();
 
-  Stream<User> get authState => firebaseAuth.idTokenChanges();
+  Stream<User?> get authState => firebaseAuth.idTokenChanges();
 
   Future<void> signOut() async {
     await auth.signOut();
@@ -22,10 +22,10 @@ class AuthenticationProvider {
     }
   }
 
-  Future<String> signIn({String? email, String? password}) async {
+  Future<String?> signIn({String? email, String? password}) async {
     try {
       await firebaseAuth.signInWithEmailAndPassword(
-          email: email, password: password);
+          email: email.toString(), password: password.toString());
 
       await auth.writeAuth(email, password);
 
@@ -35,10 +35,10 @@ class AuthenticationProvider {
     }
   }
 
-  Future<String> signUp({String? email, String? password}) async {
+  Future<String?> signUp({String? email, String? password}) async {
     try {
       await firebaseAuth.createUserWithEmailAndPassword(
-          email: email, password: password);
+          email: email.toString(), password: password.toString());
 
       await auth.writeAuth(email, password);
 
@@ -49,6 +49,6 @@ class AuthenticationProvider {
   }
 
   Future<String> uid() async {
-    return firebaseAuth.currentUser.uid;
+    return firebaseAuth.currentUser!.uid;
   }
 }
